@@ -1,0 +1,28 @@
+class GameObject:
+    def __init__(self, name, state="standing", speed=0, color="white"):
+        self.name = name
+        self.state = state
+        self.speed = speed
+        self.color = color
+
+    def inform_state(self):
+        print(f"{self.name} is {self.state} and is {self.color} in color.")
+        if self.state == "moving":
+            print(f"It is moving at a speed of {self.speed} units per second.")
+
+    def change_state(self, new_state):
+        self.state = new_state
+
+# Example usage:
+if __name__ == "__main__":
+    object1 = GameObject("Object1", "standing", 0, "red")
+    object2 = GameObject("Object2", "moving", 10, "blue")
+
+    object1.inform_state()
+    object2.inform_state()
+
+    object1.change_state("moving")
+    object2.change_state("standing")
+
+    object1.inform_state()
+    object2.inform_state()
